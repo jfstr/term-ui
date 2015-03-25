@@ -1,0 +1,15 @@
+126a127
+> 	preput      => { default => '',     strict_type => 1 },
+268c269
+<     my ($default, $prompt, $choices, $multi, $allow, $prompt_add, $print_me);
+---
+>     my ($default, $prompt, $preput, $choices, $multi, $allow, $prompt_add, $print_me);
+273c274,275
+<                             store => \$prompt },
+---
+> 			 store => \$prompt },
+> 	preput      => { default => '',     strict_type => 1, store => \$preput },
+339c341
+<         my $answer  = $term->readline($prompt);
+---
+>         my $answer  = $term->readline($prompt, $preput);
